@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основные шрифты</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .font-card {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .font-demo {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .times { font-family: 'Times New Roman', serif; }
+        .arial { font-family: Arial, sans-serif; }
+        .helvetica { font-family: 'Helvetica Neue', sans-serif; }
+        .georgia { font-family: Georgia, serif; }
+        .verdana { font-family: Verdana, sans-serif; }
+        .comic { font-family: 'Comic Sans MS', cursive; }
+        .impact { font-family: Impact, sans-serif; }
+    </style>
+</head>
+<body>
+    <h1>Основные шрифты</h1>
+
+    <div class="font-card">
+        <div class="font-demo times">Times New Roman</div>
+        <p><strong>Категория:</strong> Засечковый</p>
+        <p>Для документов, газет, официальных текстов</p>
+    </div>
+
+    <div class="font-card">
+        <div class="font-demo arial">Arial</div>
+        <p><strong>Категория:</strong> Рубленый</p>
+        <p>Универсальный шрифт для сайтов и интерфейсов</p>
+    </div>
+
+    <div class="font-card">
+        <div class="font-demo helvetica">Helvetica</div>
+        <p><strong>Категория:</strong> Рубленый</p>
+        <p>Стильный и современный шрифт для дизайна</p>
+    </div>
+
+    <div class="font-card">
+        <div class="font-demo georgia">Georgia</div>
+        <p><strong>Категория:</strong> Засечковый</p>
+        <p>Для блогов и длинных текстов в интернете</p>
+    </div>
+
+    <div class="font-card">
+        <div class="font-demo verdana">Verdana</div>
+        <p><strong>Категория:</strong> Рубленый</p>
+        <p>Широкий и читаемый шрифт для интерфейсов</p>
+    </div>
+
+    <div class="font-card">
+        <div class="font-demo comic">Comic Sans</div>
+        <p><strong>Категория:</strong> Рукописный</p>
+        <p>Неформальный шрифт для детских проектов</p>
+    </div>
+
+    <div class="font-card">
+        <div class="font-demo impact">Impact</div>
+        <p><strong>Категория:</strong> Акцидентный</p>
+        <p>Для заголовков и мемов</p>
+    </div>
+<a https://www.figma.com/proto/q8iMEWbGkZe0njMmD8Az7a/Untitled?node-id=0-1&p=f&t=HDuoNkernifl3540-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1>
+</body>
+</html>
