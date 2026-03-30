@@ -3,81 +3,412 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Основные шрифты</title>
+    <title>🔪 DANGANRONPA | Основные шрифты</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dr-pink: #e6007a;
+            --dr-red: #b52e2e;
+            --dr-black: #1a1a1a;
+            --dr-white: #f8f8f8;
+            --dr-gray: #2e2e2e;
+            --dr-shadow: rgba(0, 0, 0, 0.3);
+            --gradient-dr: linear-gradient(135deg, #e6007a, #b52e2e);
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
+            font-family: 'Segoe UI', 'Poppins', 'Impact', 'Arial Black', sans-serif;
+            background: #0a0a0a;
+            color: var(--dr-white);
+            min-height: 100vh;
+            position: relative;
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(230, 0, 122, 0.03) 30px, rgba(230, 0, 122, 0.03) 60px);
+            padding: 20px;
+        }
+
+        /* Фон с эффектом */
+        .dr-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: radial-gradient(circle at 20% 40%, rgba(230, 0, 122, 0.05), transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(181, 46, 46, 0.05), transparent 50%);
+        }
+
+        /* Плавающие элементы */
+        .dr-particle {
+            position: fixed;
+            background: var(--dr-pink);
+            border-radius: 50%;
+            filter: blur(8px);
+            opacity: 0.08;
+            animation: floatParticle 20s infinite ease-in-out;
+            z-index: -1;
+        }
+
+        @keyframes floatParticle {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-50px) translateX(30px); }
+        }
+
+        /* Контейнер */
+        .dr-container {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
-            background: #f5f5f5;
+            background: rgba(26, 26, 26, 0.92);
+            border-radius: 25px;
+            border: 3px solid var(--dr-pink);
+            box-shadow: 10px 10px 0 var(--dr-black);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
         }
+
+        /* Заголовок */
+        .dr-header {
+            background: var(--gradient-dr);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid var(--dr-black);
+        }
+
+        .dr-header::before {
+            content: '📝';
+            position: absolute;
+            font-size: 120px;
+            opacity: 0.15;
+            right: -20px;
+            bottom: -30px;
+            pointer-events: none;
+        }
+
+        .dr-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            text-shadow: 4px 4px 0 var(--dr-black);
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        .dr-header p {
+            font-size: 1.1em;
+            text-shadow: 2px 2px 0 var(--dr-black);
+            opacity: 0.95;
+        }
+
+        /* Контент */
+        .dr-content {
+            padding: 40px;
+        }
+
+        /* Карточка шрифта */
         .font-card {
-            background: white;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: rgba(26, 26, 26, 0.8);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 20px;
+            border: 2px solid var(--dr-pink);
+            box-shadow: 6px 6px 0 var(--dr-black);
+            transition: all 0.2s ease;
+            animation: cardAppear 0.5s ease-out;
+            animation-fill-mode: both;
         }
+
+        .font-card:nth-child(1) { animation-delay: 0.05s; }
+        .font-card:nth-child(2) { animation-delay: 0.1s; }
+        .font-card:nth-child(3) { animation-delay: 0.15s; }
+        .font-card:nth-child(4) { animation-delay: 0.2s; }
+        .font-card:nth-child(5) { animation-delay: 0.25s; }
+        .font-card:nth-child(6) { animation-delay: 0.3s; }
+        .font-card:nth-child(7) { animation-delay: 0.35s; }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .font-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 10px 10px 0 var(--dr-black);
+        }
+
+        /* Демонстрация шрифта */
         .font-demo {
-            font-size: 24px;
-            margin: 10px 0;
+            font-size: 32px;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            text-align: center;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
         }
-        .times { font-family: 'Times New Roman', serif; }
-        .arial { font-family: Arial, sans-serif; }
-        .helvetica { font-family: 'Helvetica Neue', sans-serif; }
-        .georgia { font-family: Georgia, serif; }
-        .verdana { font-family: Verdana, sans-serif; }
-        .comic { font-family: 'Comic Sans MS', cursive; }
-        .impact { font-family: Impact, sans-serif; }
+
+        .font-card:hover .font-demo {
+            transform: scale(1.02);
+            background: rgba(230, 0, 122, 0.1);
+        }
+
+        /* Категория шрифта */
+        .font-category {
+            display: inline-block;
+            background: rgba(230, 0, 122, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin: 10px 0 5px 0;
+            border-left: 3px solid var(--dr-pink);
+        }
+
+        .font-description {
+            color: var(--dr-white);
+            opacity: 0.8;
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+
+        /* Стили для конкретных шрифтов */
+        .times { font-family: 'Times New Roman', Georgia, serif; }
+        .arial { font-family: Arial, Helvetica, sans-serif; }
+        .helvetica { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+        .georgia { font-family: Georgia, 'Times New Roman', serif; }
+        .verdana { font-family: Verdana, Geneva, sans-serif; }
+        .comic { font-family: 'Comic Sans MS', 'Chalkboard SE', cursive; }
+        .impact { font-family: Impact, 'Arial Black', sans-serif; letter-spacing: 1px; }
+
+        /* Бейджик улики */
+        .evidence-badge {
+            display: inline-block;
+            background: var(--dr-black);
+            color: var(--dr-pink);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.7em;
+            font-family: monospace;
+            margin-left: 10px;
+        }
+
+        /* Футер */
+        footer {
+            margin-top: 20px;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid var(--dr-pink);
+        }
+
+        footer div {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-footer {
+            background: var(--gradient-dr);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 4px 4px 0 var(--dr-black);
+            transition: all 0.1s linear;
+            display: inline-block;
+            font-size: 0.9em;
+        }
+
+        .btn-footer:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--dr-black);
+        }
+
+        .btn-footer:hover {
+            background: linear-gradient(135deg, #ff1a8c, #cc3b3b);
+        }
+
+        /* Ссылка на Figma */
+        .figma-link {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            border-top: 1px dashed rgba(230, 0, 122, 0.3);
+        }
+
+        .figma-link a {
+            color: var(--dr-pink);
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .figma-link a:hover {
+            text-shadow: 0 0 10px var(--dr-pink);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .dr-container {
+                margin: 0;
+            }
+            .dr-header h1 {
+                font-size: 1.8em;
+            }
+            .dr-content {
+                padding: 20px;
+            }
+            .font-demo {
+                font-size: 24px;
+            }
+            .font-card {
+                padding: 18px;
+            }
+        }
     </style>
 </head>
+
 <body>
-    <h1>Основные шрифты</h1>
-
-    <div class="font-card">
-        <div class="font-demo times">Times New Roman</div>
-        <p><strong>Категория:</strong> Засечковый</p>
-        <p>Для документов, газет, официальных текстов</p>
-    </div>
-
-    <div class="font-card">
-        <div class="font-demo arial">Arial</div>
-        <p><strong>Категория:</strong> Рубленый</p>
-        <p>Универсальный шрифт для сайтов и интерфейсов</p>
-    </div>
-
-    <div class="font-card">
-        <div class="font-demo helvetica">Helvetica</div>
-        <p><strong>Категория:</strong> Рубленый</p>
-        <p>Стильный и современный шрифт для дизайна</p>
-    </div>
-
-    <div class="font-card">
-        <div class="font-demo georgia">Georgia</div>
-        <p><strong>Категория:</strong> Засечковый</p>
-        <p>Для блогов и длинных текстов в интернете</p>
-    </div>
-
-    <div class="font-card">
-        <div class="font-demo verdana">Verdana</div>
-        <p><strong>Категория:</strong> Рубленый</p>
-        <p>Широкий и читаемый шрифт для интерфейсов</p>
-    </div>
-
-    <div class="font-card">
-        <div class="font-demo comic">Comic Sans</div>
-        <p><strong>Категория:</strong> Рукописный</p>
-        <p>Неформальный шрифт для детских проектов</p>
-    </div>
-
-    <div class="font-card">
-        <div class="font-demo impact">Impact</div>
-        <p><strong>Категория:</strong> Акцидентный</p>
-        <p>Для заголовков и мемов</p>
-    </div>
-<a href="https://www.figma.com/proto/q8iMEWbGkZe0njMmD8Az7a/Untitled?node-id=0-1&p=f&t=HDuoNkernifl3540-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1">
+    <div class="dr-bg"></div>
     
-</a>
+    <!-- Плавающие элементы -->
+    <div class="dr-particle" style="width: 250px; height: 250px; top: -80px; right: -80px;"></div>
+    <div class="dr-particle" style="width: 180px; height: 180px; bottom: 50px; left: -60px; animation-duration: 25s;"></div>
+    <div class="dr-particle" style="width: 120px; height: 120px; top: 40%; right: 5%; animation-duration: 18s;"></div>
+
+    <div class="dr-container">
+        <div class="dr-header">
+            <h1>🔪 ОСНОВНЫЕ ШРИФТЫ</h1>
+            <p>Академия Надежды | Классный суд типографики</p>
+        </div>
+
+        <div class="dr-content">
+            <!-- Times New Roman -->
+            <div class="font-card">
+                <div class="font-demo times">Times New Roman</div>
+                <div class="font-category">🏛️ ЗАСЕЧКОВЫЙ (SERIF)</div>
+                <div class="font-description">
+                    <strong>🔪 Улика:</strong> Классический шрифт для документов, газет и официальных текстов.
+                    <span class="evidence-badge">ДРЕВНЯЯ УЛИКА</span>
+                </div>
+            </div>
+
+            <!-- Arial -->
+            <div class="font-card">
+                <div class="font-demo arial">Arial</div>
+                <div class="font-category">⚡ РУБЛЕНЫЙ (SANS-SERIF)</div>
+                <div class="font-description">
+                    <strong>🌹 Улика:</strong> Универсальный шрифт для сайтов и интерфейсов. Стандарт веба.
+                    <span class="evidence-badge">НАДЁЖНАЯ УЛИКА</span>
+                </div>
+            </div>
+
+            <!-- Helvetica -->
+            <div class="font-card">
+                <div class="font-demo helvetica">Helvetica</div>
+                <div class="font-category">✨ РУБЛЕНЫЙ (SANS-SERIF)</div>
+                <div class="font-description">
+                    <strong>💀 Улика:</strong> Стильный и современный шрифт, любимец дизайнеров по всему миру.
+                    <span class="evidence-badge">ЭЛИТНАЯ УЛИКА</span>
+                </div>
+            </div>
+
+            <!-- Georgia -->
+            <div class="font-card">
+                <div class="font-demo georgia">Georgia</div>
+                <div class="font-category">📖 ЗАСЕЧКОВЫЙ (SERIF)</div>
+                <div class="font-description">
+                    <strong>🎲 Улика:</strong> Идеален для блогов и длинных текстов в интернете. Отличная читаемость.
+                    <span class="evidence-badge">ЧИТАЕМАЯ УЛИКА</span>
+                </div>
+            </div>
+
+            <!-- Verdana -->
+            <div class="font-card">
+                <div class="font-demo verdana">Verdana</div>
+                <div class="font-category">👁️ РУБЛЕНЫЙ (SANS-SERIF)</div>
+                <div class="font-description">
+                    <strong>🔍 Улика:</strong> Широкий и читаемый шрифт, созданный специально для экранов.
+                    <span class="evidence-badge">ЭКРАННАЯ УЛИКА</span>
+                </div>
+            </div>
+
+            <!-- Comic Sans -->
+            <div class="font-card">
+                <div class="font-demo comic">Comic Sans MS</div>
+                <div class="font-category">🎨 РУКОПИСНЫЙ (SCRIPT)</div>
+                <div class="font-description">
+                    <strong>😈 Улика:</strong> Неформальный шрифт для детских проектов и мемов. Любимый шрифт отчаяния!
+                    <span class="evidence-badge">СПОРНАЯ УЛИКА</span>
+                </div>
+            </div>
+
+            <!-- Impact -->
+            <div class="font-card">
+                <div class="font-demo impact">Impact</div>
+                <div class="font-category">💥 АКЦИДЕНТНЫЙ (DISPLAY)</div>
+                <div class="font-description">
+                    <strong>⚡ Улика:</strong> Мощный шрифт для заголовков и мемов. Привлекает внимание!
+                    <span class="evidence-badge">УЛИКА-УДАР</span>
+                </div>
+            </div>
+
+            <!-- Ссылка на Figma -->
+            <div class="figma-link">
+                <a href="https://www.figma.com/proto/q8iMEWbGkZe0njMmD8Az7a/Untitled?node-id=0-1&p=f&t=HDuoNkernifl3540-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1" target="_blank">
+                    🎨 СМОТРЕТЬ МАКЕТ В FIGMA → 
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <a href="https://github.com/nrostomentos" class="btn-footer">🐙 GitHub</a>
+            <a href="https://t.me/swn_f" class="btn-footer">📱 Telegram</a>
+        </div>
+        <div style="margin-top: 15px; font-size: 0.7em; opacity: 0.5;">
+            ⚡ 希望ヶ峰学園 | SORE WA CHIGAU YO! ⚡
+        </div>
+    </footer>
+
+    <script>
+        // Консольное приветствие в стиле Danganronpa
+        console.log('%c🔪 DANGANRONPA | ТИПОГРАФИЧЕСКИЙ КЛАССНЫЙ СУД 🔪', 'color: #e6007a; font-size: 14px; font-weight: bold;');
+        console.log('%c💀 "SORE WA CHIGAU YO!" — каждый шрифт имеет право на защиту! 💀', 'color: #b52e2e; font-size: 12px; font-style: italic;');
+        
+        // Эффект при наведении на карточки (дополнительная анимация)
+        const cards = document.querySelectorAll('.font-card');
+        cards.forEach((card, index) => {
+            card.addEventListener('mouseenter', () => {
+                const badge = card.querySelector('.evidence-badge');
+                if (badge) {
+                    badge.style.transform = 'scale(1.05)';
+                    badge.style.transition = 'transform 0.2s ease';
+                }
+            });
+            card.addEventListener('mouseleave', () => {
+                const badge = card.querySelector('.evidence-badge');
+                if (badge) {
+                    badge.style.transform = 'scale(1)';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
